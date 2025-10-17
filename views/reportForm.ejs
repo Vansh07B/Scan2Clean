@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Form | Scan2Clean</title>
+  <link rel="icon" href="/images/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center space-x-2">
+        <i data-feather="cpu" class="text-emerald-600 w-6 h-6"></i>
+        <span class="font-bold text-xl text-gray-800">Scan2Clean</span>
+      </div>
+      <div class="space-x-4 hidden md:flex">
+        <a href="/admin/login" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium">Admin</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-32 pb-12 bg-emerald-50">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Report an Unclean Area 🧹</h2>
+      <p class="text-gray-600 text-center mb-8">Help us keep the campus clean by reporting unclean areas. Upload an image if available.</p>
+      
+      <form action="/submit" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <div>
+          <label class="block font-medium text-gray-700 mb-1">Location</label>
+          <input type="text" name="location" placeholder="Enter location" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium text-gray-700 mb-1">Date</label>
+            <input type="date" name="date" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700 mb-1">Time</label>
+            <input type="time" name="time" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium text-gray-700 mb-1">Description</label>
+          <textarea name="description" rows="4" placeholder="Describe the issue" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-medium text-gray-700 mb-1">Upload Image (optional)</label>
+          <input type="file" name="image" accept="image/*" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+        </div>
+
+        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors">Submit Report</button>
+      </form>
+
+      <div id="toast" class="fixed bottom-8 right-8 bg-emerald-600 text-white px-6 py-3 rounded-xl shadow-lg opacity-0 transition-opacity duration-300 z-50">
+  ✅ Report submitted successfully!
+</div>
+
+<script>
+  feather.replace();
+
+  const reportForm = document.querySelector('form'); // get the form element
+
+  reportForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // stop normal page reload
+
+    const formData = new FormData(reportForm);
+
+    try {
+      const res = await fetch('/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json(); // parse JSON from server
+
+      if (data.success) {
+        alert('✅ Report submitted successfully!'<br>' Thank you for helping keep the campus clean.');
+        reportForm.reset(); // clear form
+      } else {
+        alert('❌ Failed to submit report. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('❌ An error occurred while submitting the report.');
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan2Clean | Campus Cleanliness Platform</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .stats-counter {
+            transition: all 0.3s ease-out;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/hero_campus.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="cpu" class="text-emerald-600 h-6 w-6"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">Scan2Clean</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</a>
+                    <a href="/admin/login" class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                    <a href="/report" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Report Now</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-100 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">About</a>
+                <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">How It Works</a>
+                <a href="#reports" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">Reports</a>
+                <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">Team</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-100">Contact</a>
+                <a href="/report" class="block w-full bg-emerald-600 text-white px-4 py-2 rounded-md text-base font-medium text-center">Report Now</a>
+                <a href="/admin" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-700">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 md:pt-40 md:pb-28 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Together, Let's Keep Our Campus Clean <span class="text-emerald-400">🌿</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Report unclean areas instantly with just one scan.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/report" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+                        <i data-feather="file-text" class="inline mr-2"></i> Report Now
+                    </a>
+                    <a href="#how-it-works" class="bg-white hover:bg-gray-100 text-emerald-700 font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+                        <i data-feather="info" class="inline mr-2"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Scan2Clean</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <!-- <img src="http://static.photos/education/640x360/7" alt="Clean Campus" class="rounded-lg shadow-xl w-full h-auto"> -->
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Digital Cleanliness Initiative</h3>
+                    <p class="text-gray-600 mb-4">Scan2Clean is an innovative digital platform that empowers students and staff to actively participate in maintaining campus cleanliness through technology.</p>
+                    <p class="text-gray-600 mb-6">By scanning strategically placed QR codes around campus, users can instantly report unclean areas, upload photos, and help create a more sustainable learning environment.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-emerald-100 p-3 rounded-full mr-3">
+                                <img src="/images/leaf-svgrepo-com.svg" alt="Leaf Icon" class="w-7 h-7">
+                            </div>
+                            <span class="text-gray-700">Eco-Friendly</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-emerald-100 p-3 rounded-full mr-3">
+                                <i data-feather="zap" class="text-emerald-600"></i>
+                            </div>
+                            <span class="text-gray-700">Instant Reporting</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-emerald-100 p-3 rounded-full mr-3">
+                                <i data-feather="users" class="text-emerald-600"></i>
+                            </div>
+                            <span class="text-gray-700">Community Driven</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">How Scan2Clean Works</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our three-step process makes campus cleanliness reporting simple and efficient.</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="maximize" class="text-emerald-600 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">1. Scan the QR Code</h3>
+                    <p class="text-gray-600">Locate and scan any Scan2Clean QR code placed around campus using your smartphone camera.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="edit-3" class="text-emerald-600 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">2. Submit Report</h3>
+                    <p class="text-gray-600">Fill out the simple form with details and optionally upload a photo of the issue.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover text-center">
+                    <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="check-circle" class="text-emerald-600 w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">3. Issue Resolved</h3>
+                    <p class="text-gray-600">The maintenance team receives your report and resolves the issue promptly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Objectives & Benefits</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Why Scan2Clean makes a difference</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Promotes Hygiene</h3>
+                    <p class="text-gray-600 text-sm">Encourages awareness of cleanliness standards across campus.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Student Involvement</h3>
+                    <p class="text-gray-600 text-sm">Empowers students to take ownership of their environment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Faster Response</h3>
+                    <p class="text-gray-600 text-sm">Reduces time between reporting and resolution of issues.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <img src="/images/tree-svgrepo-com.svg" alt="Leaf Icon" class="w-6 h-6">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Sustainable</h3>
+                    <p class="text-gray-600 text-sm">Paperless system reduces waste and promotes eco-friendly practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Report Button -->
+    <a href="/report" class="fixed bottom-8 right-8 bg-emerald-600 text-white p-4 rounded-full shadow-lg hover:bg-emerald-700 transition-colors z-40">
+        <i data-feather="plus" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-24 right-8 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors z-40">
+        <i data-feather="arrow-up" class="w-5 h-5"></i>
+    </button>
+<!-- Meet the Team Section -->
+    <section id="team" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet The EcoCoders Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">The passionate students behind Scan2Clean</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+                <!-- Team Member 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="/images/no_profile.jpg" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">John Snow</h3>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="/images/no_profile.jpg" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">David Willim</h3>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="/images/no_profile.jpg" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Michael Jackson</h3>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.icons.menu.replace(icon);
+            } else {
+                feather.icons.x.replace(icon);
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('show');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+        fadeElements.forEach(fadeElement => {
+            appearOnScroll.observe(fadeElement);
+        });
+
+        // Animated counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Feather icons replacement
+        feather.replace();
+    </script>
+</body>
+</html>

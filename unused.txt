@@ -1,0 +1,262 @@
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-emerald-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center fade-in">
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2 stats-counter" data-target="1247">0</div>
+                    <div class="text-xl">Total Reports</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2 stats-counter" data-target="1098">0</div>
+                    <div class="text-xl">Resolved Issues</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2 stats-counter" data-target="149">0</div>
+                    <div class="text-xl">Pending Reports</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Reports Section -->
+    <section id="reports" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Recent Cleanliness Reports</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">See how our community is helping improve campus cleanliness.</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+                <!-- Report Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/education/640x360/1" alt="Messy classroom">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Messy Classroom</h3>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Resolved</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i data-feather="map-pin" class="inline mr-1 w-4 h-4"></i> Building A, Room 203</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="calendar" class="inline mr-1 w-4 h-4"></i> 2 days ago</span>
+                            <span><i data-feather="user" class="inline mr-1 w-4 h-4"></i> Student</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Report Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/education/640x360/2" alt="Littered hallway">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Littered Hallway</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pending</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i data-feather="map-pin" class="inline mr-1 w-4 h-4"></i> Main Building, 2nd Floor</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="calendar" class="inline mr-1 w-4 h-4"></i> 5 hours ago</span>
+                            <span><i data-feather="user" class="inline mr-1 w-4 h-4"></i> Faculty</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Report Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/education/640x360/3" alt="Dirty cafeteria">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Dirty Cafeteria</h3>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Resolved</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i data-feather="map-pin" class="inline mr-1 w-4 h-4"></i> Student Center</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span><i data-feather="calendar" class="inline mr-1 w-4 h-4"></i> 1 week ago</span>
+                            <span><i data-feather="user" class="inline mr-1 w-4 h-4"></i> Staff</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 fade-in">
+                <a href="/report" class="inline-flex items-center text-emerald-600 hover:text-emerald-800 font-medium">
+                    View all reports <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section id="team" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet The EcoCoders Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">The passionate students behind GreenSweep</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+                <!-- Team Member 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="http://static.photos/people/200x200/1" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Alex Johnson</h3>
+                    <p class="text-gray-600 mb-2">Lead Developer</p>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="http://static.photos/people/200x200/2" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Priya Patel</h3>
+                    <p class="text-gray-600 mb-2">UI/UX Designer</p>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="http://static.photos/people/200x200/3" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Michael Chen</h3>
+                    <p class="text-gray-600 mb-2">Backend Developer</p>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="http://static.photos/people/200x200/4" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Sarah Williams</h3>
+                    <p class="text-gray-600 mb-2">Project Manager</p>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 fade-in">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have questions or suggestions about GreenSweep? We'd love to hear from you.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                                <i data-feather="mail" class="text-emerald-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                                <p class="text-gray-600">cleancampus@college.edu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                                <i data-feather="map-pin" class="text-emerald-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Location</h3>
+                                <p class="text-gray-600">SIPNA College of Engineering & Technology, Amravati</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-8">
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors">
+                            <i data-feather="facebook" class="text-gray-700"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors">
+                            <i data-feather="twitter" class="text-gray-700"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors">
+                            <i data-feather="instagram" class="text-gray-700"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors">
+                            <i data-feather="linkedin" class="text-gray-700"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-6">Send us a message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="cpu" class="text-emerald-400 h-6 w-6"></i>
+                        <span class="ml-2 text-xl font-bold">GreenSweep</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">A digital initiative to maintain campus cleanliness through technology and community participation.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white">Our Team</a></li>
+                        <li><a href="/report" class="text-gray-400 hover:text-white">Report Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="/admin" class="text-gray-400 hover:text-white">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 GreenSweep Campus Clean Project | Developed by Team EcoCoders</p>
+            </div>
+        </div>
+    </footer>
+<!-- Team Member 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="http://static.photos/people/200x200/4" alt="Team member">
+                    <h3 class="text-xl font-semibold text-gray-800">Sarah Williams</h3>
+                    <p class="text-gray-600 mb-2">Project Manager</p>
+                    <p class="text-sm text-gray-500">SIPNA College of Engineering</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-emerald-600"><i data-feather="github"></i></a>
+                    </div>
+                </div>
